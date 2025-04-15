@@ -37,6 +37,19 @@ void entradaDeDados(int n){
     printf("\n\n#### CARTA CRIADA COM SUCESSO #### \n\n");
 }
 
+void saidaDeDados(int carta, char estado,char codigoCarta[3],char nome[20],int populacao,float areaDaCidade,float pib,int pontosTuristicos){
+
+    printf("Carta %d\n", carta);
+    printf("Estado: %c\n", estado);
+    printf("Codigo: %s\n", codigoCarta);
+    printf("Nome da cidade: %s\n", nome);
+    printf("Populacao: %d\n", populacao);
+    printf("Area: %f\n", areaDaCidade);
+    printf("PIB: %f\n", pib);
+    printf("Numero de pontos turisticas: %d\n\n", pontosTuristicos);
+
+}
+
 int main() {
 
     char criarCarta;
@@ -79,15 +92,7 @@ int main() {
     printf("\n\n#### CARTA CRIADA COM SUCESSO #### \n\n");
 
     //Mostrando dados da carta 1
-
-    printf("Carta 1\n");
-    printf("Estado: %c\n", estado);
-    printf("Codigo: %s\n", codigoCarta);
-    printf("Nome da cidade: %s\n", nome);
-    printf("Populacao: %d\n", populacao);
-    printf("Area: %f\n", areaDaCidade);
-    printf("PIB: %f\n", pib);
-    printf("Numero de pontos turisticas: %d\n\n", pontosTuristicos);
+    saidaDeDados(1,estado,codigoCarta,nome,populacao,areaDaCidade,pib, pontosTuristicos);
 
     //Caracteristicas da carta 2
     char estado2, codigoCarta2[3], nome2[20];
@@ -120,18 +125,10 @@ int main() {
     printf("\n\n#### CARTA CRIADA COM SUCESSO #### \n\n");
 
     //Mostrando dados da carta 2
-
-    printf("Carta 2\n");
-    printf("Estado: %c\n", estado2);
-    printf("Codigo: %s\n", codigoCarta2);
-    printf("Nome da cidade: %s\n", nome2);
-    printf("Populacao: %d\n", populacao2);
-    printf("Area: %f\n", areaDaCidade2);
-    printf("PIB: %f\n", pib2);
-    printf("Numero de pontos turisticas: %d\n\n", pontosTuristicos2);
+    saidaDeDados(2,estado2,codigoCarta2,nome2,populacao2,areaDaCidade2,pib2, pontosTuristicos2);
 
     //criei uma parte com mais logica mas n era necessario para o teste
-    
+
     /*printf("Vamos criar sua carta agora?  S/N\n");
 
     scanf(" %c", &criarCarta);
