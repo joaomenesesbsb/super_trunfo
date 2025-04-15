@@ -5,6 +5,16 @@ void iniciarJogo(){
     printf("#####    Bem Vindo ao SUPER TRUNFO    ####\n \n");
 }
 
+float densidadePopulacional(int populacao, float area){
+    float densidadePopulacional = (float) populacao / area;
+    return densidadePopulacional;
+}
+
+float pibPerCapita(float pib, int populacao){
+    float pibPerCapita =(float) pib / populacao;
+    return pibPerCapita;
+}
+
 //Aprendendo funcoes em C
 void entradaDeDados(int n){
     char estado, codigoCarta[3], nome[20];
@@ -39,6 +49,9 @@ void entradaDeDados(int n){
 
 void saidaDeDados(int carta, char estado,char codigoCarta[3],char nome[20],int populacao,float areaDaCidade,float pib,int pontosTuristicos){
 
+    float densidade = densidadePopulacional(populacao,areaDaCidade);
+    float PPC = pibPerCapita(pib,populacao);
+
     printf("Carta %d\n", carta);
     printf("Estado: %c\n", estado);
     printf("Codigo: %s\n", codigoCarta);
@@ -46,9 +59,13 @@ void saidaDeDados(int carta, char estado,char codigoCarta[3],char nome[20],int p
     printf("Populacao: %d\n", populacao);
     printf("Area: %f\n", areaDaCidade);
     printf("PIB: %f\n", pib);
-    printf("Numero de pontos turisticas: %d\n\n", pontosTuristicos);
+    printf("Numero de pontos turisticas: %d\n", pontosTuristicos);
+    printf("Densidade Populacional: %.2f\n", densidade);
+    printf("PIB per Capita: %.2f\n\n", PPC);
 
 }
+
+
 
 int main() {
 
@@ -67,12 +84,11 @@ int main() {
     //Criando a carta 1
     printf("####    Carta 1    ####\n");
     
-    printf("Digite o Estado: ");
-    scanf("  %c", &estado);
+    printf("Digite o Estado:");
+    scanf(" %c", &estado);
     
     printf("Digite o Codigo: ");
     scanf("%s", &codigoCarta);
-    printf("Estado: %c\n", estado);
 
     printf("Digite o nome da cidade: ");
     scanf("%s", &nome);
