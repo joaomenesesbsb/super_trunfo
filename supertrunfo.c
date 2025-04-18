@@ -1,6 +1,16 @@
 #include <stdio.h>
 
-//Inicia o jogo
+int menuInicial(){
+    int opcao;
+
+    printf("Selecione uma Opcao\n");
+    printf("[1] INICIAR JOGO\n");
+    printf("[2] REGRAS DO JOGO\n");
+    printf("[3] SAIR DO JOGO\n\n");
+    
+    scanf("%d", &opcao);
+    return opcao;
+}
 void iniciarJogo(){
     printf("\n\n##########################################\n");
     printf("#####    Bem Vindo ao SUPER TRUNFO    ####\n");
@@ -12,6 +22,19 @@ void fimDeJogo(){
     printf("\n\n##################################\n");
     printf("####    OBRIGADO POR JOGAR    ####\n");
     printf("##################################\n\n");
+}
+
+int menuCompararAtributos(){
+    int opcao;
+    printf("HORA DE COMPARAR CARTAS\n");
+    printf("O que deseja comparar?\n");
+    printf("[1] POPULACAO\n");
+    printf("[2] AREA\n");
+    printf("[3] PIB\n");
+    printf("[4] PONTOS TURISTICOS\n");
+    printf("[5] DENSIDADE GEOGRAFICA\n\n");
+    scanf("%d", &opcao);
+    return opcao;
 }
 
 float calcularDensidadePopulacional(int populacao, float area){
@@ -228,16 +251,7 @@ void opcaoInvalida(){
 
 int main() {
 
-
-    int menu;
-    printf("Selecione uma Opcao\n");
-    printf("[1] INICIAR JOGO\n");
-    printf("[2] REGRAS DO JOGO\n");
-    printf("[3] SAIR DO JOGO\n\n");
-    scanf("%d", &menu);
-
-
-    switch (menu)
+    switch (menuInicial())
     {
     case 1:
 
@@ -308,18 +322,7 @@ int main() {
     scanf("%d", &pontosTuristicos2);
     printf("\n\n#### CARTA CRIADA COM SUCESSO #### \n\n");
 
-    int opcao;
-    printf("HORA DE COMPARAR CARTAS\n");
-    printf("O que deseja comparar?\n");
-    printf("[1] POPULACAO\n");
-    printf("[2] AREA\n");
-    printf("[3] PIB\n");
-    printf("[4] PONTOS TURISTICOS\n");
-    printf("[5] DENSIDADE GEOGRAFICA\n\n");
-
-    scanf("%d", &opcao);
-
-    switch (opcao)
+    switch (menuCompararAtributos())
     {
     case 1:
         compararPopulacao(1,populacao,2,populacao2);
